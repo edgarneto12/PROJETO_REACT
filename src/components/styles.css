@@ -1,0 +1,29 @@
+*{
+    font-family: sans-serif;
+}
+Header{
+    height: 150px;
+    background-color: rgb(31, 31, 31);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.header_title a h1{
+   text-align: center;
+   margin-left: 20px;
+}
+.Nav ul{
+    display: flex;
+    list-style: none;
+}
+.Nav ul li {
+    margin-right: 20px;
+}
+.Nav ul li a:hover{
+    color: rgb(75, 75, 252);
+}
+Header a{
+    text-decoration: none;
+    color: white;
+}
