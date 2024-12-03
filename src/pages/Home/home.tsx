@@ -1,6 +1,6 @@
 import './home.css'
 
-const Home = () => {
+export default Home => {
     return(
     <div className='Content'>
         <h1>Rick and Morty</h1>
@@ -13,4 +13,3 @@ const Home = () => {
     </div>
 )
 }
-export default Home
