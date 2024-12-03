@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import './Style.css'
 
-export default Personagens => {
+export default PersonagensAleatorios => {
     const [personagem, setPersonagem] = useState<any>(null)
 
     const GenerateRandomPersonagem = () => {

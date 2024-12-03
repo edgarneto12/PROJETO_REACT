@@ -1,8 +1,4 @@
-Home{
-    background-image: url(/background-home.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+
 
 
 .Content {
@@ -19,13 +15,11 @@ Home{
     background-repeat: no-repeat;
 }
 
-/* Estilizando o título */
 .Title {
-    font-size: 2.5rem; /* Tamanho do texto */
-    margin-bottom: 20px; /* Espaço abaixo do título */
+    font-size: 2.5rem; 
+    margin-bottom: 20px; 
 }
 
-/* Estilizando os parágrafos */
 .Content p {
     font-size: 1.5rem; 
     margin: 10px; 
@@ -35,32 +29,29 @@ Home{
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    text-align: justify;
     
 }
 
-/* Deixa os parágrafos lado a lado */
 .p1,
 .p2 {
-    display: inline-block; /* Faz os parágrafos se comportarem como elementos em linha */
-    max-width: 45%; /* Define largura máxima para não ficarem muito largos */
-    text-align: justify; /* Alinha o texto de forma justificada */
+    display: inline-flex;
+    max-width: 45%; 
+    text-align: justify; 
 }
 
-/* Estilização para layout lado a lado */
+
 .Content {
-    flex-direction: column; /* Inicialmente em coluna */
+    flex-direction: column;
 }
 
 @media (min-width: 768px) {
-    /* Muda para layout lado a lado em telas maiores */
     .Content {
-        flex-direction: column; /* Alinha os elementos lado a lado */
+        flex-direction: row; 
         justify-content: space-around;
     }
     .Content p {
-        display: flex;
-        flex: 1;
-        align-items: center;
-        justify-content: center;
+        max-width: 45%; 
+        height: auto; 
     }
 }
