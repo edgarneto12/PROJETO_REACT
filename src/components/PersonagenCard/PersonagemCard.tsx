@@ -1,5 +1,5 @@
 import { Character } from "../../types";
-import "./index.css"
+import './Style.css'
 
 export interface Props {
     character: Character
@@ -8,19 +8,19 @@ export interface Props {
 export default function CharacterCard(props: Props) {
     const character = props.character
     return(
-        <li>
+        <li className="character-li">
             <div className="character-image-container">
                 <img className="character-image" src={`${character.image}`} alt={`Image for Rick and Morty character:${character.name}`} />
             </div>
             <div className="character-infos">
                 <p className='character-name'>
-                    {character.name}  
+                    Nome: {character.name} 
                 </p>
                 <p className="character-status">
-                    {character.status}
+                    Status: {character.status}
                 </p>
                 <p className="character-specie">           
-                    {character.species}
+                    Especie: {character.species}
                 </p>
                 <p className="character-location-name"> 
                     Local: {character.location.name}

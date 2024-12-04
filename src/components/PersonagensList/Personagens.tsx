@@ -1,36 +1,50 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./Style.css";
-import CharacterCard from "../PersonagenCard";
+import CharacterCard from "../PersonagenCard/PersonagemCard";
 import { Character } from "../../types";
-
-
-
 
 export default function PersonagemList() {
     const [characters, setCharacters] = useState<Character[]>([]);
+    const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {
-        getCharacters();
-    }, [])
+        getAllCharacters();
+    }, []);
 
-    const getCharacters = () => {
-        axios
-        .get("https://rickandmortyapi.com/api/character")
-        .then(response => {
-            setCharacters(response.data.results)
-            console.log(response.data.results)
-            console.log(response.data.info.next)
-        })
-    }
+    const getAllCharacters = async () => {
+        try {
+            let allCharacters: Character[] = [];
+            let nextPage = "https://rickandmortyapi.com/api/character";
+
+            while (nextPage) {
+                const response = await axios.get(nextPage);
+                allCharacters = [...allCharacters, ...response.data.results];
+                nextPage = response.data.info.next; 
+            }
+
+            setCharacters(allCharacters);
+        } catch (error) {
+            console.error("Erro ao carregar personagens:", error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
     return (
-        <ul className='character-card'>
-            {characters.map((character) =>
-                <CharacterCard
-                    key={character.id}
-                    character={character}
-                />
+        <div className="character-container">
+            {loading ? (
+                <p>Carregando personagens...</p>
+            ) : (
+                <ul className="character-list">
+                    {characters.map((character) => (
+                        <CharacterCard 
+                        key={character.id} 
+                        character={character} 
+                        />
+                    ))}
+                </ul>
             )}
-        </ul>
-    )
+        </div>
+    );
 }

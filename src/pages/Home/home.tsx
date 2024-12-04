@@ -1,4 +1,4 @@
-import './home.css'
+import './Style.css'
 
 export default Home => {
     return(

@@ -1,0 +1,28 @@
+.random-character-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.random-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #3e3f3f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.random-button:hover {
+    background-color: #7f62ff;
+}
+
+.random-character {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+} 
