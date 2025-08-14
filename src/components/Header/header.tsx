@@ -1,16 +1,17 @@
 import "./Style.css"
+import { Link } from "react-router-dom"
 
 export const Header = () => {
     return(
         <header>
             <div className="header_title">
-                <a href="/"><h1>Rick And Morty</h1></a>
+                <Link to="/"><h1>Rick And Morty</h1></Link>
             </div>
             <div className="Nav">
                 <ul>
-                    <li><a href="/Personagens" >Personagens</a></li>
+                    <li><Link to="/Personagens" >Personagens</Link></li>
                     <p>|</p>
-                    <li><a href="/Personagem-aleatorio" >Randomizar um Personagem</a></li>
+                    <li><Link to="/Personagem-aleatorio" >Randomizar um Personagem</Link></li>
                 </ul>
             </div>
         </header>)

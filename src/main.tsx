@@ -7,11 +7,15 @@ import Home from './pages/Home/home';
 import Personagens from './pages/Personagens/personagens';
 import Personaleatorio from './pages/Personagem-aleatorio/Personagemaleatorio'
 
+const rootElement = document.getElementById('root');
 
-createRoot(document.getElementById('root')!).render(
+if (!rootElement) {
+  throw new Error('Failed to find the root element');
+}
+
+createRoot(rootElement).render(
   <StrictMode>
-    
-    <BrowserRouter>
+    <BrowserRouter basename="/PROJETO_REACT">
       <Header/>
       <Routes>
         <Route path='/' element={<Home/>}/>
