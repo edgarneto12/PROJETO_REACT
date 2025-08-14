@@ -7,11 +7,16 @@ import Home from './pages/Home/home';
 import Personagens from './pages/Personagens/personagens';
 import Personaleatorio from './pages/Personagem-aleatorio/Personagemaleatorio'
 
+console.log('App starting...');
+
 const rootElement = document.getElementById('root');
 
 if (!rootElement) {
+  console.error('Root element not found!');
   throw new Error('Failed to find the root element');
 }
+
+console.log('Root element found, rendering app...');
 
 createRoot(rootElement).render(
   <StrictMode>
@@ -21,6 +26,7 @@ createRoot(rootElement).render(
         <Route path='/' element={<Home/>}/>
         <Route path='/Personagens' element={<Personagens/>}/>
         <Route path='/Personagem-aleatorio' element={<Personaleatorio/>}/>
+        <Route path='*' element={<div><h1>404 - Página não encontrada</h1><p>Rota atual: {window.location.pathname}</p></div>}/>
       </Routes>
     </BrowserRouter>
   </StrictMode>,
